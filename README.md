@@ -1,1 +1,2 @@
 # Algo-Practice
+This repository contains my solutions to various algorithms. I work on these regularly to continue to learn more about algorithms and data structures as well as to practice for job interview situations. They are sorted by data structure and then by level of difficulty. Whenever possible, I try to solve the problem set without creating additional data structures. Consideration has also been given to run time constraints.
