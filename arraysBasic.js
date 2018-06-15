@@ -1,5 +1,22 @@
 //These are my solutions to some basic algorithms that deal with the array data structure. I attempted to do them all in place
 //without creating new data structures.
+//Given an array and an additional value, insert this value at the beginning of the array.
+function pushFront(arr,val){
+    arr[arr.length] = val
+    var temp;
+
+    for(var i = 0; i < arr.length-1; i++){
+        temp = arr[i]
+        arr[i] = arr[arr.length -1]
+        arr[arr.length-1] = temp
+    }
+    console.log(arr)
+    return arr;
+}
+var arr = [-9,800,1,3,4]
+var val = "cheese"
+
+pushFront(arr, val)
 
 //Given a sorted array, return the array with all duplicate values removed.
 
