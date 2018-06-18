@@ -1,6 +1,24 @@
 //These are my solutions to some basic algorithms that deal with the array data structure. I attempted to do them all in place
 //without creating new data structures.
 
+//Given an array and an additional value, insert this value at the beginning of the array.
+function pushFront(arr,val){
+    arr[arr.length] = val
+    var temp;
+
+    for(var i = 0; i < arr.length-1; i++){
+        temp = arr[i]
+        arr[i] = arr[arr.length -1]
+        arr[arr.length-1] = temp
+    }
+    console.log(arr)
+    return arr;
+}
+var arr = [-9,800,1,3,4]
+var val = "cheese"
+
+pushFront(arr, val)
+
 //Given array, remove and return the value at the beginning of the array.
 
 function popFront(arr){
@@ -20,23 +38,64 @@ popFront(arr)
 var arr =[ "goat", "Pig", "bird"]
 popFront(arr)
 
-//Given an array and an additional value, insert this value at the beginning of the array.
-function pushFront(arr,val){
-    arr[arr.length] = val
-    var temp;
+//Given array, index, and additional value, insert the value into array at
+//given index.
 
-    for(var i = 0; i < arr.length-1; i++){
-        temp = arr[i]
-        arr[i] = arr[arr.length -1]
+function insertAt(arr,idx,val){
+    arr[arr.length] = arr[idx]
+    arr[idx] = val
+    var temp;
+    console.log(arr)
+
+    for (var i = idx+1; i < arr.length -1; i++){
+        var temp = arr[i]
+        arr[i] = arr[arr.length-1]
         arr[arr.length-1] = temp
     }
-    console.log(arr)
     return arr;
 }
-var arr = [-9,800,1,3,4]
-var val = "cheese"
+ 
+var arr = [1,2,4,5]
+var idx = 2
+var val = 3
+insertAt(arr,idx,val)
 
-pushFront(arr, val)
+//Given array and an index into array, remove and return the array value at that index.
+
+function removeAt(arr,idx){
+    for(var i = idx; i < arr.length -1; i++){
+        arr[i] = arr[i+1]
+    }
+    arr.length = arr.length -1;
+    return arr;
+}
+var arr = [1,2,3,4,5,6,7,8]
+var idx = 0
+removeAt(arr, idx)
+
+//Swap positions of successive paris of values of given array. If length is odd, do not
+//change the final element.
+
+function swapPairs(arr){
+    var temp;
+    
+  
+    for(var i = 0; i<arr.length-1; i+=2){
+      console.log("i :" + i)
+      temp = arr[i]
+      arr[i] = arr[i+1]
+      arr[i+1] = temp
+      console.log(arr + "i: " + i)
+    }
+    console.log(i)
+    return arr
+  }
+  
+  var arr = [1,2,3,4,5]
+  swapPairs(arr)
+
+  var arr = [1,2,3,4,5,6]
+  swapPairs(arr)
 
 //Given a sorted array, return the array with all duplicate values removed.
 
