@@ -1,5 +1,25 @@
 //These are my solutions to some basic algorithms that deal with the array data structure. I attempted to do them all in place
 //without creating new data structures.
+
+//Given array, remove and return the value at the beginning of the array.
+
+function popFront(arr){
+    var val = arr[0];
+
+    for(var i = 0; i < arr.length-1; i++){
+        arr[i] = arr[i+1]
+    }
+    arr.length = arr.length -1
+    console.log(arr)
+    return val
+}
+
+var arr =[ 1,2,3,4]
+popFront(arr)
+
+var arr =[ "goat", "Pig", "bird"]
+popFront(arr)
+
 //Given an array and an additional value, insert this value at the beginning of the array.
 function pushFront(arr,val){
     arr[arr.length] = val
