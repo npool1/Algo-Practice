@@ -81,13 +81,10 @@ function swapPairs(arr){
     
   
     for(var i = 0; i<arr.length-1; i+=2){
-      console.log("i :" + i)
       temp = arr[i]
       arr[i] = arr[i+1]
       arr[i+1] = temp
-      console.log(arr + "i: " + i)
     }
-    console.log(i)
     return arr
   }
   
